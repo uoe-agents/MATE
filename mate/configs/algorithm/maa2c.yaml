@@ -1,0 +1,29 @@
+# @package _global_
+_target_: algos.a2c.train.main
+
+algorithm:
+  _target_: algos.a2c.maa2c.MAA2C
+  model:
+    actor:
+      - 128
+      - 128
+    critic:
+      - 128
+      - 128
+    recurrent: true
+    activation: 'relu' # options: 'relu' or 'tanh'
+    device: cpu
+
+  greedy_evaluation: false
+
+  lr: 5e-4
+  tau: 0.01
+  max_grad_norm: 0.0
+  entropy_coef: 0.01
+  value_loss_coef: 0.5
+  adam_eps: 0.001
+  gamma: 0.99
+  n_steps: 5
+
+env:
+  parallel_envs: 10

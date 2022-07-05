@@ -1,0 +1,36 @@
+defaults:
+  - logger: print
+  - hydra/job_logging: file
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - seed
+
+seed: null
+
+env:
+  _target_: utils.envs.make_env
+  name: ???
+  dummy_vecenv: false
+  parallel_envs: null
+  max_ep_length: null
+  arguments: {}
+  wrappers:
+    - RecordEpisodeStatistics
+    - SquashDones
+
+algorithm:
+  load_dir: null
+  num_env_steps: 100000000
+  log_interval: 2000
+  save_interval: 1000000
+  eval_interval: 1000000
+  episodes_per_eval: 8
+  gamma: 0.99
+  standardise_rewards: false
+
+autoencoder: null

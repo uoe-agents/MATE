@@ -1,0 +1,15 @@
+# @package _global_
+env:
+  name: bpush-large-2ag-v0
+  max_ep_length: 50
+
+  wrappers:
+    - RecordEpisodeStatistics
+    - SquashDones
+    - FlattenObservation
+
+algorithm:
+  num_env_steps: 10000000
+  log_interval: 100000
+  save_interval: null
+  eval_interval: 250000

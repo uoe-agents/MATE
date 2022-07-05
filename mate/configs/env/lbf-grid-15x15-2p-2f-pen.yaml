@@ -1,0 +1,17 @@
+# @package _global_
+env:
+  name: Foraging-grid-2s-15x15-2p-2f-v2
+
+  wrappers:
+    - RecordEpisodeStatistics
+    - SquashDones
+    - FlattenObservation
+
+  arguments:
+      penalty: 0.1
+
+algorithm:
+  num_env_steps: 20000000
+  log_interval: 20000
+  save_interval: null
+  eval_interval: 500000

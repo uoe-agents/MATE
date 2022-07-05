@@ -1,0 +1,25 @@
+# @package _global_
+env:
+  name: rware-imgdict-tiny-4ag-v1
+  dr_interval: 1
+  arguments:
+    sensor_range: 2
+    column_height:
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+  wrappers:
+    - RecordEpisodeStatistics
+    - SquashDones
+    - ConcatDictObservation
+
+algorithm:
+  num_env_steps: 50000000
+  log_interval: 250000
+  save_interval: null
+  eval_interval: 1000000

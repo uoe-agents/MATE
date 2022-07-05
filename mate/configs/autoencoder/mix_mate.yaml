@@ -1,0 +1,31 @@
+# @package _group_
+_target_: algos.ae.mix_mate.MixedMATE
+task_emb_dim: 10
+encoder:
+    type: 'vae'
+    hiddens:
+        - 64
+        - 64
+    activation: 'relu' # options: 'relu' or 'tanh'
+decoder:
+    type: 'deterministic' # 'probabilistic' or 'deterministic'
+    hiddens:
+        - 64
+        - 64
+    activation: 'relu' # options: 'relu' or 'tanh'
+mixing:
+    hiddens:
+        - 64
+    activation: 'relu' # options: 'relu' or 'tanh'
+
+lr: 1e-4
+device: 'cpu'
+max_grad_norm: 0.5
+
+# whether task embedding should be detached for RL update
+# if false then RL loss backprops into the encoder
+detach: True
+
+obs_loss_coef: 1.0
+rew_loss_coef: 1.0
+kl_loss_coef: 0.1
