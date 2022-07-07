@@ -68,3 +68,13 @@ These are structured in packages for
 - hydra parameters under `configs/hydra/`
 - logger parameters under `configs/logger/`
 - default parameters in `configs/default.yaml`
+
+## Citation
+```
+@article{schaefer2022mate,
+  title={Learning Task Embeddings for Teamwork Adaptation in Multi-Agent Reinforcement Learning},
+  author={Sch{\"a}fer, Lukas and Christianos, Filippos and Storkey, Amos and Albrecht, Stefano V.},
+  journal={https://arxiv.org/abs/2207.02249},
+  year={2022}
+}
+```
