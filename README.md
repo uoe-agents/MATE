@@ -71,10 +71,10 @@ These are structured in packages for
 
 ## Citation
 ```
-@article{schaefer2022mate,
+@inproceedings{schaefer2023mate,
   title={Learning Task Embeddings for Teamwork Adaptation in Multi-Agent Reinforcement Learning},
   author={Sch{\"a}fer, Lukas and Christianos, Filippos and Storkey, Amos and Albrecht, Stefano V.},
-  journal={https://arxiv.org/abs/2207.02249},
-  year={2022}
+  booktitle={NeurIPS Workshop on Generalization in Planning},
+  year={2023}
 }
 ```
