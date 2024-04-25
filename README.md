@@ -69,6 +69,10 @@ These are structured in packages for
 - logger parameters under `configs/logger/`
 - default parameters in `configs/default.yaml`
 
+
+## Results and Plots From Paper
+Episodic returns of all experiments can be found under `data/`, containing the configs and results of the respective training and finetuning runs across all algorithms and tasks. To load the data and reproduce all plots in the paper, see the jupyter notebook at `data/plot_paper_results.ipynb`.
+
 ## Citation
 ```
 @inproceedings{schaefer2023mate,
