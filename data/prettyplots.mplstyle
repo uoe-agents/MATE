@@ -1,0 +1,10 @@
+figure.titlesize:15
+figure.figsize:7.0,4.0
+figure.dpi:200
+xtick.labelsize:9
+ytick.labelsize:9
+lines.linewidth:1.5
+axes.labelsize:12
+legend.fontsize:12
+axes.grid:True
+image.cmap:Accent

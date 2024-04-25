@@ -7,6 +7,7 @@ setup(
     install_requires=[
         'click',
         'gym==0.21.0',
+        'h5py==3.10.0',
         'hydra-core==1.0.5',
         'lbforaging',
         'matplotlib',

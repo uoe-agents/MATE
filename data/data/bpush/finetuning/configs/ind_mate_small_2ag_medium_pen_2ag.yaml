@@ -1,0 +1,71 @@
+_target_: algos.a2c.train.main
+algorithm:
+  _target_: algos.a2c.maa2c.MAA2C
+  adam_eps: 0.001
+  entropy_coef: 0.0001
+  episodes_per_eval: 8
+  eval_interval: 400000
+  gamma: 0.99
+  greedy_evaluation: false
+  load_run_id: 1tk8dv4k
+  load_step: null
+  log_interval: 200000
+  lr: 0.0003
+  max_grad_norm: 0
+  model:
+    activation: relu
+    actor:
+    - 128
+    - 128
+    critic:
+    - 128
+    - 128
+    device: cpu
+    recurrent: true
+  n_steps: 5
+  num_env_steps: 20000000
+  save_interval: 2000000
+  standardise_rewards: true
+  tau: 0.01
+  value_loss_coef: 0.5
+autoencoder:
+  _target_: algos.ae.ind_mate.IndependentMATE
+  decoder:
+    activation: relu
+    hiddens:
+    - 64
+    - 64
+    type: deterministic
+  detach: true
+  device: cpu
+  encoder:
+    activation: relu
+    hiddens:
+    - 64
+    - 64
+    type: vae
+  frozen: true
+  kl_loss_coef: 0.1
+  lr: 0.0001
+  max_grad_norm: 0.5
+  obs_loss_coef: 1
+  rew_loss_coef: 1
+  task_emb_dim: 3
+env:
+  _target_: utils.envs.make_env
+  arguments:
+    penalty: 0.01
+  dr_interval: 1
+  dummy_vecenv: false
+  max_ep_length: 50
+  name: bpush-medium-2ag-v0
+  parallel_envs: 10
+  wrappers:
+  - RecordEpisodeStatistics
+  - SquashDones
+  - FlattenObservation
+logger:
+  _target_: utils.logger.WandbLogger
+  mode: offline
+  project_name: marl_generalisation
+manual_mate: null

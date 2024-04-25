@@ -1,0 +1,47 @@
+_target_: algos.a2c.train.main
+algorithm:
+  _target_: algos.a2c.maa2c.MAA2C
+  adam_eps: 0.001
+  entropy_coef: 0.01
+  episodes_per_eval: 8
+  eval_interval: 200000
+  gamma: 0.99
+  greedy_evaluation: false
+  load_run_id: null
+  log_interval: 100000
+  lr: 0.0003
+  max_grad_norm: 0
+  model:
+    activation: relu
+    actor:
+    - 128
+    - 128
+    critic:
+    - 128
+    - 128
+    device: cpu
+    recurrent: true
+  n_steps: 5
+  num_env_steps: 10000000
+  save_interval: 1000000
+  standardise_rewards: true
+  tau: 0.01
+  value_loss_coef: 0.5
+autoencoder: null
+env:
+  _target_: utils.envs.make_env
+  arguments: {}
+  dr_interval: 1
+  dummy_vecenv: false
+  max_ep_length: null
+  name: Foraging-grid-2s-15x15-4p-6f-v2
+  parallel_envs: 10
+  wrappers:
+  - RecordEpisodeStatistics
+  - SquashDones
+  - FlattenObservation
+logger:
+  _target_: utils.logger.WandbLogger
+  mode: offline
+  project_name: marl_generalisation
+manual_mate: null
